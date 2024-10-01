@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import  Loading  from './components/common/Loading.jsx'
 import ErrorPage from './components/common/ErrorPage.jsx';
-import { noteRoutes } from './components/Notes.jsx';
+import { noteRoutes } from './components/Notes/Notes.jsx';
 import SideBar from './components/SideBar.jsx';
 
 import {
@@ -18,9 +18,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPage/>,
     children: [
-      noteRoutes
+      noteRoutes,
     ]
   }
 ]);
