@@ -4,9 +4,7 @@ class Api::V1::NotesController < ApplicationController
   def index
     @notes = Note.all
 
-    respond_to do |format|
-      format.json { render :json => @notes, head: :ok}
-    end
+    render json: @notes, status: :ok
   end
 
   def create
@@ -14,9 +12,7 @@ class Api::V1::NotesController < ApplicationController
     note.save
 
     if note.save
-      respond_to do |format|
-        format.json { render :json => note}
-      end
+      render json: @note, status: :ok
     else
       render status: :internal_server_error, message: "An error occurred while creating the user."
     end
@@ -25,7 +21,7 @@ class Api::V1::NotesController < ApplicationController
   def show
     @note = Note.find(params[:id])
 
-    render json: { data: @note }, status: :ok
+    render json: @note, status: :ok
   end
 
   def destroy
