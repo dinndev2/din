@@ -29,8 +29,8 @@ export default function Note({note_id}) {
     <div className="w-1/2 flex items-center justify-center">
       {activeNote ? 
         <div> 
-          <h1>{activeNote.data.title}</h1>
-          <h2>{activeNote.data.description}</h2>
+          <h1>{activeNote.title}</h1>
+          <h2>{activeNote.description}</h2>
         </div> : "This is a test only"}
     </div>
   )
