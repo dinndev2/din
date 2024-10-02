@@ -12,7 +12,7 @@ class Api::V1::NotesController < ApplicationController
     note.save
 
     if note.save
-      render json: @note, status: :ok
+      render json: note.id, status: :ok
     else
       render status: :internal_server_error, message: "An error occurred while creating the user."
     end

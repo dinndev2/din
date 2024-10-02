@@ -1,17 +1,22 @@
 import { API_URL } from '../../constants'
 import { useRef } from 'react';
 
-function NoteInput({reload}) {
+function NoteInput({reload, setCurrentNote}) {
   const formRef = useRef();
 
   async function createNote(event) {
     event.preventDefault(); // Prevents the default form submission behavior
     const notes_api_url = `${API_URL}/notes`
     const formData = new FormData(formRef.current);
+    
+    const description = formData.get('description')
+    const descriptionTitle = formData.get('description').slice(0, 30)
+
     const note = {
-      title: formData.get('title'),
       description: formData.get('description'),
+      title: descriptionTitle
     };
+
       if(note.title || note.description) {
         try {
           const response = await fetch(notes_api_url, {
@@ -24,6 +29,8 @@ function NoteInput({reload}) {
           if (response.ok) {
             // reload note lists
             reload(true)
+            const createdNote = await response.json()
+            setCurrentNote(createdNote)
             // reset input
             formRef.current.reset()
           } else {
@@ -36,11 +43,13 @@ function NoteInput({reload}) {
   }
 
   return (
-    <form ref={formRef} onSubmit={createNote} >
-      <input type="text" id="title" name="title" placeholder="Title" />
-      <input type="text" id="description" name="description" placeholder="Description" />
-      <button type="submit">Create</button>
-    </form>
+    <div>
+       <form ref={formRef} >
+        <div className='flex flex-col'>
+          <textarea className='rounded text-2xl note-input text-sm font-bold' style={{ outline: 'none', border: 'none' }} type="text" id="description" name="description" onBlur={createNote} placeholder="How's your day?"/>
+        </div>
+      </form>
+    </div>
   );
 }
 
