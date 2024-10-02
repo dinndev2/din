@@ -9,7 +9,7 @@ function App() {
   return (
     <div className='w-screen h-screen overflow-hidden flex '>
       <SideBar />
-      <div className='w-5/6 flex items-center justify-center'>
+      <div className='w-5/6 flex items-start justify-center p-6'>
         <Outlet/>
       </div>
     </div>

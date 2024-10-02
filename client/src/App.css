@@ -29,3 +29,20 @@ nav a:hover {
   border-style: dashed;
   
 }
+
+
+.note-input {
+  height: 13rem;
+  color: --secondary-text-color;
+}
+
+.note-container {
+  max-height: 50rem;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+
+}
+
+.note-container::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
