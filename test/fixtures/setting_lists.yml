@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: 1
+  type: 
+  settingsable: one
+  settingsable_type: Settingsable
+
+two:
+  order: 1
+  type: 
+  settingsable: two
+  settingsable_type: Settingsable

@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import  Loading  from './components/common/Loading.jsx'
 import ErrorPage from './components/common/ErrorPage.jsx';
 import { noteRoutes } from './components/Notes/Notes.jsx';
+import { jobRoutes } from './components/Jobs.jsx';
+
 import SideBar from './components/SideBar.jsx';
 
 import {
@@ -13,6 +15,7 @@ import {
 import * as ReactDOM from "react-dom/client";
 import App from './App.jsx'
 import './index.css'
+import { settingsRoutes } from './components/Settings/Settings.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage/>,
     children: [
       noteRoutes,
+      jobRoutes,
+      settingsRoutes,
     ]
   }
 ]);

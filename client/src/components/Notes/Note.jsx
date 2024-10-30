@@ -26,7 +26,7 @@ export default function Note({note_id}) {
     openNote()
   }, [note_id])
   return(
-    <div className="w-1/2 flex items-start justify-center">
+    <div className="w-8/12 flex items-start justify-center">
       {activeNote ? 
         <div className="w-full"> 
           <div>

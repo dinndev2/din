@@ -1,7 +1,7 @@
 :root {
   --secondary: #f5f5f5;
   --secondary-text-color: #363636;
-  --accent: #1A5319;
+  --accent: #EAB30A;
 }
 
 .secondary-container {
@@ -15,6 +15,12 @@ nav a.active{
   padding: 6px 12px;
   color: var(--accent)
 
+}
+
+a.active {
+  color: var(--accent);
+  border-bottom: solid var(--accent) 2px;
+  
 }
 
 nav a:hover {

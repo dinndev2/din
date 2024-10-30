@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  link: MyString
+  identifier: MyString
+  end: 2024-10-27
+  start: 2024-10-27
+  made_of: MyString
+
+two:
+  name: MyString
+  description: MyText
+  link: MyString
+  identifier: MyString
+  end: 2024-10-27
+  start: 2024-10-27
+  made_of: MyString
